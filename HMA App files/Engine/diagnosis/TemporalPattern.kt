@@ -1,0 +1,11 @@
+enum class TemporalPattern {
+
+    CONSTANT,
+    INTERMITTENT,
+    RECURRENT,
+    EPISODIC,
+    PERSISTENT,
+    PROGRESSIVE,
+    RELAPSING_REMITTING
+
+}
