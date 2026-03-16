@@ -1,4 +1,4 @@
-name: Build APK
+name: Build HMA APK
 
 on:
   push:
@@ -12,14 +12,17 @@ on:
                       - name: Checkout repository
                               uses: actions/checkout@v4
 
-                                    - name: Set up Java
+                                    - name: Setup Java
                                             uses: actions/setup-java@v4
                                                     with:
-                                                              distribution: 'temurin'
-                                                                        java-version: '17'
+                                                              distribution: temurin
+                                                                        java-version: 17
 
                                                                               - name: Install Android SDK
                                                                                       uses: android-actions/setup-android@v3
 
-                                                                                            - name: Build APK
-                                                                                                    run: ./gradlew assembleDebug
+                                                                                            - name: Make gradlew executable
+                                                                                                    run: chmod +x gradlew
+
+                                                                                                          - name: Build APK
+                                                                                                                  run: ./gradlew assembleDebug
